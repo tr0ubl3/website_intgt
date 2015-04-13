@@ -5,14 +5,67 @@
 	<link rel="stylesheet" type="text/css" href="css/semantic.css">
 	<link rel="stylesheet" type="text/css" href="css/intgt.css">
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.panelSnap.min.js"></script>
 	<script type="text/javascript" src="js/semantic.js"></script>
-	<script type="text/javascript" src="js/skrollr.min.js"></script>
 	<!--[if lt IE 9]>
 		<script type="text/javascript" src="skrollr.ie.min.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="js/intgt.js"></script>
 </head>
 <body>
+<!-- 	<div class="ui page grid">
+		<div class="computer tablet only row">
+			<div class="ui secondary large teal menu">
+				<a class="brand item">
+					<h2 class="header">
+						<img class="ui middle aligned small image" src="img/logo.gif">
+						International G&amp;T
+					</h2>
+				</a>
+				<div class="right menu">
+					<a href="#" class="ui item">
+						<i class="america flag"></i>
+					</a>
+					<a href="#" class="item">
+						<i class="romania flag"></i>
+					</a>
+				</div>
+			</div>
+			<div>
+			</div>
+		</div>
+	</div> -->
+	<section class="landing">
+		<nav class="header">
+			
+		</nav>
+		<div id="container-video" data-0="opacity:1;" data-100p="opacity:0;">
+			<div id="detalii" class="ui transparent button">
+				  <i class="arrow down icon"></i> Descopera mai multe
+			</div>
+		</div>
+	</section>
 
+	<img class="logo" src="img/logo.gif" alt="" data-0p="display:none;opacity:0;" data-70p="display: block;opacity:0.6;" data-100p="opacity:1;">
+	<img class="imagine-span" src="img/span.png" alt="" data-0p="display:none;left:-1079px;opacity:0;" data-70p="display:block;left:-950px;opacity:0.5;" data-100p="left:-800px;opacity:1;" data-200p="left:-600px;">
+	<section id="pagina-1" data-section-name="frezare">
+		<div id="strunjire" class="ui transparent button">
+			  Descopera strunjirea
+		</div>
+	</section>
+	<section id="pagina-2" data-section-name="strunjire">
+	</section>
+	<script type="text/javascript" src="js/skrollr.min.js"></script>
+	<script type="text/javascript">
+	    skrollr.init({
+	    	forceHeight: false, 
+	    	edgeStrategy: 'set',
+	    	smoothScrolling: true,
+	    	constants: {
+		    	pagina1: '1050p'
+		    }
+		});
+	    $('body > p').first().remove();
+	</script>
+	<script type="text/javascript" src="js/intgt.js"></script>
 </body>
 </html>

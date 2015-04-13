@@ -1,0 +1,107 @@
+body {
+	-webkit-font-smoothing: antialiased;
+	height: 100% !important;
+}
+
+div.grid > div.row {
+	margin-top: 20px;
+}
+
+.full {
+	display: block;
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	background-color: grey;
+	padding: 0;
+	margin: 0;
+	transition: 0.2s opacity;
+}
+
+.transparent {
+	display: block !important;
+	position: relative;
+	width: 13vw;
+	margin: 0 auto !important;
+	background-color: transparent !important;
+	border: 1px solid white !important;
+	color: white !important;
+}
+
+.full > .transparent {
+	
+}
+
+#pagina-1 > .transparent {
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+[id^="pagina-"] {
+	display: block;
+	position: relative;
+	height: 100vh;
+	width: 100%;
+}
+
+#pagina-1 {
+	background-color: teal;
+}
+
+#pagina-2 {
+	background-color: aqua;
+}
+
+.imagine-span {
+	position: fixed;
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+	/* padding-top: 30px; */
+	height: 90px;
+	z-index: 1;
+	top: 40px;
+	left: -800px;
+	transition: 0.2s left;
+}
+
+.logo {
+	display: block;
+	position: fixed;
+	width: 150px;
+	top: 10px;
+	left: 0;
+	z-index: 2;
+}
+
+.landing {
+	$height: 100%;
+	$height_header: 15%;
+	$height_video: $height - $height_header;
+	
+	display: block;
+	height: $height;
+	width: 100%;
+	background-color: red;
+	
+	 > * {
+		display: inherit;
+		width: 100%;
+	}
+	
+	> .header {
+		height: $height_header;
+		background-color: lightgreen;
+	}
+	
+	> #container-video {
+		height: $height_video;
+		background-color: gray;
+		> #detalii {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}

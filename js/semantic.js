@@ -1963,7 +1963,6 @@ $.fn.accordion = function(parameters) {
               ;
             }
           },
-
         },
 
         setting: function(name, value) {
