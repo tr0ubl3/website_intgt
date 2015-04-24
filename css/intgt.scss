@@ -7,6 +7,94 @@ div.grid > div.row {
 	margin-top: 20px;
 }
 
+.landing {
+	$height: 100%;
+	$height_header: 10%;
+	$height_video: $height - $height_header;
+	
+	display: block;
+	height: $height;
+	width: 100%;
+	// background-color: red;
+	
+	 > * {
+		display: inherit;
+		width: 100%;
+	}
+	
+	> .header {
+		width: 94%;
+		margin: 0 auto;
+		height: $height_header;
+		// background-color: lightgreen;
+		
+		> .branding {
+			display: inline-block;
+			position: relative;
+			height: 100%;
+			min-width: 265px;
+
+			> a {
+				margin: 0;
+				position: absolute;
+				top: 50%;
+				transform: translate(0, -50%);
+				text-decoration: none;
+				color: #898989;
+				transition: all 0.2s ease-out;
+				padding: 3px;	
+
+				&:hover {
+					color: #2aa8e0;
+				}
+
+				&:focus {
+					box-shadow: 0 0 1px 1px #ccc;
+					border-radius: 5px;
+				}
+				
+				> h2 {
+					white-space: nowrap;
+					text-overflow: clip;
+					text-align: left;
+					
+					.logo-branding {
+						display: inline-block;
+						width: 50px;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+		> .i18n {
+			display: table;
+			position: relative;
+			float: right;
+			height: 100%;
+			width: 67px;
+			
+			a {
+				display: table-cell;
+				vertical-align: middle;
+				i {
+					&:hover {
+						transform: scale(1.2);
+					}
+				}
+			}
+		}
+	}
+	
+	> #container-video {
+		height: $height_video;
+		background-color: gray;
+		> #detalii {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+
 .full {
 	display: block;
 	position: relative;
@@ -68,7 +156,7 @@ div.grid > div.row {
 }
 
 .logo {
-	display: block;
+	@extend .logo-branding;
 	position: fixed;
 	width: 150px;
 	top: 10px;
@@ -76,32 +164,3 @@ div.grid > div.row {
 	z-index: 2;
 }
 
-.landing {
-	$height: 100%;
-	$height_header: 15%;
-	$height_video: $height - $height_header;
-	
-	display: block;
-	height: $height;
-	width: 100%;
-	background-color: red;
-	
-	 > * {
-		display: inherit;
-		width: 100%;
-	}
-	
-	> .header {
-		height: $height_header;
-		background-color: lightgreen;
-	}
-	
-	> #container-video {
-		height: $height_video;
-		background-color: gray;
-		> #detalii {
-			top: 50%;
-			transform: translateY(-50%);
-		}
-	}
-}

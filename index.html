@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Frezare, Strunjire, Electroeroziune, Lepuire, Rectificare</title>
 	<link rel="stylesheet" type="text/css" href="css/semantic.css">
 	<link rel="stylesheet" type="text/css" href="css/intgt.css">
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery.panelSnap.min.js"></script>
 	<script type="text/javascript" src="js/semantic.js"></script>
+	<script type="text/javascript" src="js/three.min.js"></script>
 	<!--[if lt IE 9]>
 		<script type="text/javascript" src="skrollr.ie.min.js"></script>
 	<![endif]-->
@@ -36,7 +37,22 @@
 	</div> -->
 	<section class="landing">
 		<nav class="header">
-			
+			<div class="branding">
+				<a href="./">
+					<h2>
+						<img class="logo-branding" src="img/logo.gif">
+						International G&amp;T
+					</h2>
+				</a>
+			</div>
+			<div class="i18n">
+				<a href="#" class="ui item">
+					<i class="america flag"></i>
+				</a>
+				<a href="#" class="item">
+					<i class="romania flag"></i>
+				</a>
+			</div>
 		</nav>
 		<div id="container-video" data-0="opacity:1;" data-100p="opacity:0;">
 			<div id="detalii" class="ui transparent button">
@@ -48,6 +64,7 @@
 	<img class="logo" src="img/logo.gif" alt="" data-0p="display:none;opacity:0;" data-70p="display: block;opacity:0.6;" data-100p="opacity:1;">
 	<img class="imagine-span" src="img/span.png" alt="" data-0p="display:none;left:-1079px;opacity:0;" data-70p="display:block;left:-950px;opacity:0.5;" data-100p="left:-800px;opacity:1;" data-200p="left:-600px;">
 	<section id="pagina-1" data-section-name="frezare">
+		<!-- <canvas id="logo"></canvas> -->
 		<div id="strunjire" class="ui transparent button">
 			  Descopera strunjirea
 		</div>
