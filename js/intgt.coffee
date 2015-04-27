@@ -48,3 +48,29 @@ $(document).ready ->
 	# 	freza.animate({d: 'm540.57 236.62c-18.434-3.377 46.066-24.368 46.066-24.368-3.37-17.74-33.64-17.25-51.63-7.14s19.625-48.278 19.625-48.278c-12.87-12.16-38.64 7.17-44.14 27.71s-16-49.59-16-49.59c-18-0.054-22 32.054-15.999 49.598s-44.136-27.71-44.136-27.71c-15.135 12.334 3.135 40.666 19.625 48.278s-51.623 7.143-51.623 7.143c-4.132 19.754 28.632 28.246 46.066 24.368s-34.954 38.654-34.954 38.654c8.98 16.277 41.02 3.223 50.952-10.944s-1.93 52.079-1.93 52.079c17.003 6.412 31.997-23.912 31.997-41.135s31.997 41.135 31.997 41.135c16.497-8.088 6.503-41.412-1.93-52.079s50.952 10.944 50.952 10.944c9.02-14.73-16.52-35.28-34.95-38.66zm-46.32 12.38c-12.841 0-23.25-10.409-23.25-23.25s10.409-23.25 23.25-23.25 23.25 10.409 23.25 23.25-10.41 23.25-23.25 23.25z'},1000, mina.linear)
 	# )
 
+	#transformare buton in play/pause
+	do controlVideo = () ->
+		video = $('#fundal_video').get(0)
+		icoana = $(".buton_play").children('i')
+		modificareIcoana = (stare) ->
+			if stare == 'pause'
+				icoana.removeClass('play').addClass('pause')
+			else if stare == 'play'
+				icoana.removeClass('pause').addClass('play')
+
+		video.onplaying = (e) ->
+			modificareIcoana('pause')
+		video.onended = (e) ->
+			modificareIcoana('play')
+
+		#buton pauza/play video landing page
+		$(".buton_play").on('click', ()->
+			if icoana.hasClass('pause')
+				video.pause()
+				modificareIcoana('play')
+			else if icoana.hasClass('play')
+				video.play()
+				modificareIcoana('pause')
+		)
+
+

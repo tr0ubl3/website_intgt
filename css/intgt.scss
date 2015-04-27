@@ -90,7 +90,6 @@ div.grid > div.row {
 		position: relative;
 		height: $height_video;
 		width: 100%;
-		// background-color: gray;
 
 		> video {
 			position: absolute;
@@ -119,6 +118,19 @@ div.grid > div.row {
 				}
 			}
 		}
+		.buton_play {
+			display: block;
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			bottom: 20px;
+			right: 20px;
+			text-align: center;
+			i {
+				line-height: 50px;
+				font-size: 15px;
+			}
+		}
 	}
 }
 
@@ -130,6 +142,12 @@ div.grid > div.row {
 	background-color: transparent !important;
 	border: 1px solid white !important;
 	color: white !important;
+
+	&:hover {
+					background-color: #d4d4d4 !important;
+					color: #767676 !important;
+					opacity: 0.8;
+			}
 }
 
 #pagina-1 > .transparent {
@@ -147,6 +165,8 @@ div.grid > div.row {
 }
 
 #pagina-1 {
+	display: block;
+	background-color: lightgrey; 
 	svg#frezare {
 		height: 100%;
 		width: 70%;
@@ -225,5 +245,17 @@ div.grid > div.row {
 	top: 10px;
 	left: 0;
 	z-index: 2;
+}
+
+.nume_sectiune {
+	display: block;
+	position: absolute;
+	width: 100px;
+	height: 40px;
+	font-size: 20pt;
+	font-weight: bold;
+	top: 6%;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
