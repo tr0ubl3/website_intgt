@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'Lato';
   font-style: normal;
-  src: local("Lato Regular"), local("Lato-Regular"), url("fonts/Lato-Regular.ttf") format("truetype"); }
+  src: local("Lato Regular"), local("Lato-Regular"), url("../fonts/Lato-Regular.ttf") format("truetype"); }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
-  src: local("Lato Bold"), local("Lato-Bold"), url("fonts/Lato-Bold.ttf") format("truetype"); }
+  src: local("Lato Bold"), local("Lato-Bold"), url("../fonts/Lato-Bold.ttf") format("truetype"); }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
-  src: local("Lato Italic"), local("Lato-Italic"), url("fonts/Lato-Italic.ttf") format("truetype"); }
+  src: local("Lato Italic"), local("Lato-Italic"), url("../fonts/Lato-Italic.ttf") format("truetype"); }
 @font-face {
   font-family: 'Lato';
   font-style: italic;
-  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("fonts/Lato-BoldItalic.ttf") format("truetype"); }
+  src: local("Lato Bold Italic"), local("Lato-BoldItalic"), url("../fonts/Lato-BoldItalic.ttf") format("truetype"); }

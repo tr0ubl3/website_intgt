@@ -147,7 +147,58 @@ div.grid > div.row {
 }
 
 #pagina-1 {
-	background-color: teal;
+	svg#frezare {
+		height: 100%;
+		width: 70%;
+
+		#freza {
+			animation-name: frezare;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-delay: 0s;
+			animation-timing-function: linear;
+			transform-origin: 50% 50%;
+		}
+
+		@keyframes frezare {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		#span {
+			animation-name: span;
+			animation-duration: 0.9s;
+			animation-iteration-count: infinite;
+			animation-delay: 0s;
+			animation-timing-function: linear;
+			animation-direction: reverse;
+		}
+
+		@keyframes span {
+			0% {
+				transform: none;
+				opacity: 0;
+			}
+			50% {
+				transform: translate(100px) rotate(4deg);
+				opacity: 1;
+			}
+
+			51% {
+				transform: none;
+				opacity: 0;
+			}
+
+			100% {
+				transform: translate(100px) translateY(10px) rotate(5deg);
+				opacity: 1;
+			}
+		}
+	}
 }
 
 #pagina-2 {
