@@ -9,7 +9,7 @@
  *
  */
 /*@import 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin';*/
-@import 'css/fonts.css'
+@import url('fonts.css');
 /*!
  * # Semantic UI 1.11.5 - Reset
  * http://github.com/semantic-org/semantic-ui/
@@ -529,7 +529,7 @@ body {
   padding: 0px;
   min-width: 320px;
   background: #f7f7f7;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.33;
   color: rgba(0, 0, 0, 0.8);
