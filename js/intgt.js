@@ -26,7 +26,7 @@ $(document).ready(function() {
     clickBinding(imperechere);
   }
   $('body').panelSnap({
-    slideSpeed: 250,
+    slideSpeed: 200,
     directionThreshold: 20
   });
   return (controlVideo = function() {

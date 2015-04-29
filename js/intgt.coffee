@@ -27,7 +27,7 @@ $(document).ready ->
 	
 	# snap-on sectiune ecran
 	$('body').panelSnap
-		slideSpeed: 250
+		slideSpeed: 200
 		directionThreshold: 20
 
 	# wegbl logo
