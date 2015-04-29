@@ -21,3 +21,9 @@
 	font-style: italic;
 	src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url('../fonts/Lato-BoldItalic.ttf') format('truetype');
 }
+
+@font-face {
+	font-family: 'Goca';
+	font-style: normal;
+	src: local('Goca'), url('../fonts/goca.ttf') format('truetype');
+}

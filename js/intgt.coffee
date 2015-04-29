@@ -1,4 +1,9 @@
 $(document).ready ->
+	clickBinding = (colectie) ->
+		colectie.forEach (element) ->
+			$(element[0]).click ->
+				$("html, body").animate({scrollTop:($(element[1]).offset().top)}, 1000, "swing")
+
 	# centrarea sectiunilor de ecran
 	elemente_de_centrat = [
 		[
@@ -10,10 +15,19 @@ $(document).ready ->
 			'#pagina-2'
 		]
 	]
-	elemente_de_centrat.forEach (element) ->
-		$(element[0]).click ->
-			$("html, body").animate({scrollTop:($(element[1]).offset().top)}, 1000, "swing")
+	clickBinding(elemente_de_centrat)
 
+	#cautare butoane .go-down si atasare eveniment click pt coborare la urmatoarea sectiune
+	for buton in $('body').find('.go-down')
+		grup = [[buton, $(buton).closest('section').next('section')]]
+		clickBinding grup
+
+	#cautare linkuri in bara navigatie si atasare eveniment pentru mutare la sectiune
+	for legatura in $('nav.header>div.container-butoane>ul').find('a')
+		console.log legatura.text.toLowerCase()
+		imperechere = [[legatura, $('[data-section-name="' + legatura.text.toLowerCase() + '"]')]]
+		clickBinding imperechere
+	
 	# snap-on sectiune ecran
 	$('body').panelSnap
 		slideSpeed: 500
