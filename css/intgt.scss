@@ -71,6 +71,7 @@ div.grid > div.row {
 		  // background-color: red;
 		  float: right;
 		  overflow: hidden;
+		  white-space: nowrap;
 
 		  ul {
 		  	display: inline-table;
@@ -103,7 +104,7 @@ div.grid > div.row {
 	  					transition: all ease-in 0.3s;
 	  				}
 	  			}
-		  		&:hover {
+		  		&:hover, section.active a {
 		  			cursor: pointer;
 		  			a:after {
 		  				opacity: 0.5;
