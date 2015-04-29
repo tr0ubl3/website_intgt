@@ -5,6 +5,7 @@ $height_video: $height - $height_header;
 body {
 	-webkit-font-smoothing: antialiased;
 	height: 100% !important;
+	overflow-x: hidden; 
 }
 
 div.grid > div.row {
@@ -92,6 +93,7 @@ div.grid > div.row {
 		  		// font-weight: bold;
 		  		padding: 5px;
 		  		transition: all .7s;
+		  		cursor: pointer;
 	  			a {
 	  				color: gray;
 					font-family: 'Lato', sans-serif;
@@ -199,6 +201,7 @@ div.grid > div.row {
 			bottom: 20px;
 			right: 20px;
 			text-align: center;
+			cursor: pointer;
 			i {
 				line-height: 50px;
 				font-size: 15px;
@@ -350,7 +353,7 @@ div.grid > div.row {
 
 		&:hover {
 			bottom: 5px;
-			background-color: rgba(180,180,180,0.2);
+			background-color: rgba(180,180,180,0.5);
 			border-radius: 3px;
 			opacity: 1;
 			// i {

@@ -11,10 +11,6 @@ $(document).ready ->
 			'#detalii'
 			'#pagina-1'
 		]
-		[
-			'#strunjire'
-			'#pagina-2'
-		]
 	]
 	clickBinding(elemente_de_centrat)
 
@@ -31,7 +27,8 @@ $(document).ready ->
 	
 	# snap-on sectiune ecran
 	$('body').panelSnap
-		slideSpeed: 500
+		slideSpeed: 250
+		directionThreshold: 20
 
 	# wegbl logo
 	# scene = new THREE.Scene()

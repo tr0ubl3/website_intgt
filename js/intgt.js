@@ -10,7 +10,7 @@ $(document).ready(function() {
       });
     });
   };
-  elemente_de_centrat = [['#detalii', '#pagina-1'], ['#strunjire', '#pagina-2']];
+  elemente_de_centrat = [['#detalii', '#pagina-1']];
   clickBinding(elemente_de_centrat);
   _ref = $('body').find('.go-down');
   for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -26,7 +26,8 @@ $(document).ready(function() {
     clickBinding(imperechere);
   }
   $('body').panelSnap({
-    slideSpeed: 500
+    slideSpeed: 250,
+    directionThreshold: 20
   });
   return (controlVideo = function() {
     var icoana, modificareIcoana, video;
