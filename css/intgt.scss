@@ -24,7 +24,7 @@ div.grid > div.row {
 	left: 50%;
 	transform: translateX(-50%);
 	
-	> .branding {
+	.branding {
 		display: inline-block;
 		position: relative;
 		height: 100%;
@@ -63,7 +63,7 @@ div.grid > div.row {
 		}
 	}
 	
-	> .container-butoane {
+	.container-butoane {
 		  display: block;
 		  position: relative;
 		  width: auto;
@@ -104,7 +104,7 @@ div.grid > div.row {
 	  					transition: all ease-in 0.3s;
 	  				}
 	  			}
-		  		&:hover, section.active a {
+		  		&:hover {
 		  			cursor: pointer;
 		  			a:after {
 		  				opacity: 0.5;
@@ -112,7 +112,12 @@ div.grid > div.row {
 		  			}
 		  		}
 		  	}
-		  }
+
+		  	a.skrollable-between:after {
+		  		opacity: 0.5;
+				top: 3px;
+		  	}
+		}
 
 	}
 	.i18n {
