@@ -2,7 +2,8 @@ $(document).ready(function() {
   var buton, clickBinding, controlVideo, elemente_de_centrat, grup, imperechere, legatura, _i, _j, _len, _len1, _ref, _ref1;
   clickBinding = function(colectie) {
     return colectie.forEach(function(element) {
-      return $(element[0]).click(function() {
+      return $(element[0]).on('click', function(e) {
+        e.preventDefault();
         return $("html, body").animate({
           scrollTop: ($(element[1]).offset().top)
         }, 1000, "swing");

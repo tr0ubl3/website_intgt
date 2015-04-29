@@ -1,7 +1,8 @@
 $(document).ready ->
 	clickBinding = (colectie) ->
 		colectie.forEach (element) ->
-			$(element[0]).click ->
+			$(element[0]).on 'click', (e) ->
+				e.preventDefault()
 				$("html, body").animate({scrollTop:($(element[1]).offset().top)}, 1000, "swing")
 
 	# centrarea sectiunilor de ecran
