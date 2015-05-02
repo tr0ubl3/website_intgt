@@ -251,6 +251,7 @@ div.grid > div.row {
 	width: 100%;
 	background-color: rgba(135, 8, 139, 0.14);
 	border-bottom: 1px solid rgba(152, 144, 144, 0.7);
+	box-sizing: border-box;
 }
 
 #pagina-1 {
@@ -414,4 +415,17 @@ div.grid > div.row {
 	width:70%;
 	top: 10%;
 	border-right: 2px solid rgba(152, 144, 144, 0.3);
+	box-sizing: border-box;
+	float: left;
+}
+
+.container-producatori {
+	display: block;
+	position: relative;
+	height: 90%;
+	width: 30%;
+	top: 10%;
+	float: left;
+
+
 }
