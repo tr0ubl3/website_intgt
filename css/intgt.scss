@@ -21,9 +21,15 @@ div.grid > div.row {
 	height: $height_header;
 	clear: both;
 	overflow: hidden;
-	background-color: skyblue;
+	background-color: rgba(161, 168, 171, 0.67);
 	left: 50%;
 	transform: translateX(-50%);
+	border-bottom: 2px solid rgba(152, 144, 144, 0.78);
+	transition: background-color 0.7s;
+
+	&:hover {
+		background-color: rgba(161, 168, 171, 0.9);
+	}
 	
 	.branding {
 		display: inline-block;
@@ -37,7 +43,7 @@ div.grid > div.row {
 			top: 50%;
 			transform: translate(0, -50%);
 			text-decoration: none;
-			color: #898989;
+			color: rgba(84, 83, 83, 0.98);
 			transition: all 0.2s ease-out;
 			padding: 3px;	
 
@@ -95,31 +101,36 @@ div.grid > div.row {
 		  		transition: all .7s;
 		  		cursor: pointer;
 	  			a {
-	  				color: gray;
+	  				color: rgba(84, 83, 83, 0.98);
 					font-family: 'Lato', sans-serif;
 					text-transform: lowercase;
+					background-color: inherit;
 	  				&:after {
 	  					display: block;
-	  					position: relative;
+	  					position: absolute;
 	  					content: '';
-	  					top: 15px;
-	  					opacity: 0;
-	  					border-bottom: 3px solid black;
+	  					border-bottom: 5px solid;
+	  					border-color: inherit;
 	  					transition: all ease-in 0.3s;
+	  					width: 80%;
+	  					bottom: 3px;
+						left: 50%;
+						transform: translateX(-50%);
+	  					opacity: 0;
 	  				}
 	  			}
 		  		&:hover {
 		  			cursor: pointer;
 		  			a:after {
 		  				opacity: 0.5;
-	  					top: 3px;
+	  					bottom: 15px;
 		  			}
 		  		}
 		  	}
 
 		  	a.skrollable-between:after {
 		  		opacity: 0.5;
-				top: 3px;
+				bottom: 15px;
 		  	}
 		}
 
@@ -236,13 +247,14 @@ div.grid > div.row {
 [id^="pagina-"] {
 	display: block;
 	position: relative;
-	height: 100vh;
+	height: 100%;
 	width: 100%;
+	background-color: rgba(135, 8, 139, 0.14);
+	border-bottom: 1px solid rgba(152, 144, 144, 0.7);
 }
 
 #pagina-1 {
 	display: block;
-	background-color: lightgrey; 
 	svg#frezare {
 		height: 100%;
 		width: 70%;
@@ -297,31 +309,63 @@ div.grid > div.row {
 	}
 }
 
-#pagina-2 {
-	background-color: aqua;
+// culori sectiuni - butoane navigatie si background sectiune cu transparenta mare
+.frezare, [data-section-name="frezare"] {
+	border-color: rgba(14, 165, 255, 1);
+	background-color: rgba(14, 165, 255, 0.1);
 }
 
-.imagine-span {
-	position: fixed;
-	width: 80%;
-	margin: 0 auto;
-	display: block;
-	/* padding-top: 30px; */
-	height: 90px;
-	z-index: 1;
-	top: 40px;
-	left: -800px;
-	transition: 0.2s left;
+.strunjire, [data-section-name="strunjire"] {
+	border-color: #ffc0c0;
+	background-color: #ffe6e6;
 }
 
-.logo {
-	@extend .logo-branding;
-	position: fixed;
-	width: 150px;
-	top: 10px;
-	left: 0;
-	z-index: 2;
+.eroziune, [data-section-name="eroziune"] {
+	border-color: #0bac08;
+	background-color: #b8f4b8;
 }
+
+.lepuire, [data-section-name="lepuire"] {
+	border-color: #AC0808;
+	background-color: rgba(172, 8, 8, 0.1);
+}
+
+.rectificare, [data-section-name="rectificare"] {
+	border-color: #0031AE;
+	background-color: rgba(0, 49, 174, 0.1);
+}
+
+.masini-speciale, [data-section-name="masini speciale"] {
+	border-color: #F7D800;
+	background-color: rgba(247, 216, 0, 0.1);
+}
+
+.cam, [data-section-name="cam"] {
+	border-color: #A208AC;
+	background-color: rgba(162, 8, 172, 0.1);
+}
+
+// .imagine-span {
+// 	position: fixed;
+// 	width: 80%;
+// 	margin: 0 auto;
+// 	display: block;
+// 	/* padding-top: 30px; */
+// 	height: 90px;
+// 	z-index: 1;
+// 	top: 40px;
+// 	left: -800px;
+// 	transition: 0.2s left;
+// }
+
+// .logo {
+// 	@extend .logo-branding;
+// 	position: fixed;
+// 	width: 150px;
+// 	top: 10px;
+// 	left: 0;
+// 	z-index: 2;
+// }
 
 .nume_sectiune {
 	display: block;
@@ -366,7 +410,8 @@ div.grid > div.row {
 .container-animatie {
 	display: block;
 	position: relative;
-	height: 100%;
+	height: 90%;
 	width:70%;
-	border-right: 1px solid rgba(50,50,50,0.6);
+	top: 10%;
+	border-right: 2px solid rgba(152, 144, 144, 0.3);
 }
