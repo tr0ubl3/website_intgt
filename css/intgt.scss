@@ -26,6 +26,7 @@ div.grid > div.row {
 	transform: translateX(-50%);
 	border-bottom: 2px solid rgba(152, 144, 144, 0.78);
 	transition: background-color 0.7s;
+	box-sizing: border-box;
 
 	&:hover {
 		background-color: rgba(161, 168, 171, 0.9);
@@ -426,6 +427,4 @@ div.grid > div.row {
 	width: 30%;
 	top: 10%;
 	float: left;
-
-
 }
