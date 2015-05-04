@@ -427,4 +427,30 @@ div.grid > div.row {
 	width: 30%;
 	top: 10%;
 	float: left;
+
+	.producator {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: auto;
+
+		img {
+			position: relative;
+			display: block;
+			transition: all 0.7s;
+			margin: 0;
+			padding: 0;
+			opacity: 0.8;
+
+			&:hover {
+				margin-left: 10px;
+				opacity: 1;
+			}
+		}
+
+		p {
+			text-indent: 15px;
+		}
+	}
+
 }
