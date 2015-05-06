@@ -79,6 +79,42 @@ $(document).ready ->
 			element.attr('data-vertical-position', verticalPosition)
 			element.on 'click', () ->
 				cookieMonster($(@).data('vertical-position'))
+
+		# jQuery image slider
+	do implentareCarusel = () ->
+		# configurare
+		vitezaAnimatie = 1000
+		pauza = 4000
+		slideCurent = 1
+
+		# DOM caching
+		$slider = $('#slider-frezare')
+		$slideContainer = $slider.find('.slides')
+		$slides = $slideContainer.find('.slide')
+
+		# gaseste si stocheaza latimea parintelui
+		latime = $slider.width()
+		# gaseste si stocheaza numarul de slide-uri
+		totalSlides = $slides.length
+
+		# setare css width ul
+		$slideContainer.css 'width', latime * totalSlides
+
+		#setare css width li
+		for slide in $slides
+			$(slide).css 'width', latime
+
+		# set interval
+		setInterval () ->
+			$slideContainer.velocity 'margin-left': '-=' + latime, vitezaAnimatie, () ->
+				slideCurent++
+				if slideCurent is totalSlides
+					slideCurent = 1
+					$slideContainer.css 'margin-left', 0
+		, pauza
+		# animatie margin-left
+		# daca e ultimul slide din lista treci la urmatoarul producator
+		# adauga butoane de interactionare pt slide-ul anterior/urmator si producator			
 		
 
 	# snap-on sectiune ecran
@@ -101,44 +137,12 @@ $(document).ready ->
 				console.log docCookies.getItem('vertical-position')
 				$("html, body").scrollTop(docCookies.getItem('vertical-position'))
 				implementareNavigatie()
+				implentareCarusel()
 				controlVideo()
 				insertData()
 				docCookies.removeItem('vertical-position')
 		.data('smoothState')
 
-	# jQuery image slider
-	# configurare
-	vitezaAnimatie = 1000
-	pauza = 4000
-	slideCurent = 1
 
-	# DOM caching
-	$slider = $('#slider-frezare')
-	$slideContainer = $slider.find('.slides')
-	$slides = $slideContainer.find('.slide')
-
-	# gaseste si stocheaza latimea parintelui
-	latime = $slider.width()
-	# gaseste si stocheaza numarul de slide-uri
-	totalSlides = $slides.length
-
-	# setare css width ul
-	$slideContainer.css 'width', latime * totalSlides
-
-	#setare css width li
-	for slide in $slides
-		$(slide).css 'width', latime
-
-	# set interval
-	setInterval () ->
-		$slideContainer.velocity 'margin-left': '-=' + latime, vitezaAnimatie, () ->
-			slideCurent++
-			if slideCurent is totalSlides
-				slideCurent = 1
-				$slideContainer.css 'margin-left', 0
-	, pauza
-		# animatie margin-left
-		# daca e ultimul slide din lista treci la urmatoarul producator
-		# adauga butoane de interactionare pt slide-ul anterior/urmator si producator
 
 

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var $slideContainer, $slider, $slides, controlVideo, cookieMonster, implementareNavigatie, insertData, latime, pauza, slide, slideCurent, totalSlides, vitezaAnimatie, _i, _len;
+  var controlVideo, cookieMonster, implementareNavigatie, implentareCarusel, insertData;
   (implementareNavigatie = function() {
     var buton, clickBinding, elemente_de_centrat, grup, imperechere, legatura, _i, _j, _len, _len1, _ref, _ref1, _results;
     clickBinding = function(colectie) {
@@ -82,11 +82,38 @@ $(document).ready(function() {
     }
     return _results;
   })();
+  (implentareCarusel = function() {
+    var $slideContainer, $slider, $slides, latime, pauza, slide, slideCurent, totalSlides, vitezaAnimatie, _i, _len;
+    vitezaAnimatie = 1000;
+    pauza = 4000;
+    slideCurent = 1;
+    $slider = $('#slider-frezare');
+    $slideContainer = $slider.find('.slides');
+    $slides = $slideContainer.find('.slide');
+    latime = $slider.width();
+    totalSlides = $slides.length;
+    $slideContainer.css('width', latime * totalSlides);
+    for (_i = 0, _len = $slides.length; _i < _len; _i++) {
+      slide = $slides[_i];
+      $(slide).css('width', latime);
+    }
+    return setInterval(function() {
+      return $slideContainer.velocity({
+        'margin-left': '-=' + latime
+      }, vitezaAnimatie, function() {
+        slideCurent++;
+        if (slideCurent === totalSlides) {
+          slideCurent = 1;
+          return $slideContainer.css('margin-left', 0);
+        }
+      });
+    }, pauza);
+  })();
   $('body').panelSnap({
     slideSpeed: 200,
     directionThreshold: 20
   });
-  (function($) {
+  return (function($) {
     'use strict';
     var continut;
     return continut = $('body#main').smoothState({
@@ -102,34 +129,11 @@ $(document).ready(function() {
         console.log(docCookies.getItem('vertical-position'));
         $("html, body").scrollTop(docCookies.getItem('vertical-position'));
         implementareNavigatie();
+        implentareCarusel();
         controlVideo();
         insertData();
         return docCookies.removeItem('vertical-position');
       }
     }).data('smoothState');
   })($);
-  vitezaAnimatie = 1000;
-  pauza = 4000;
-  slideCurent = 1;
-  $slider = $('#slider-frezare');
-  $slideContainer = $slider.find('.slides');
-  $slides = $slideContainer.find('.slide');
-  latime = $slider.width();
-  totalSlides = $slides.length;
-  $slideContainer.css('width', latime * totalSlides);
-  for (_i = 0, _len = $slides.length; _i < _len; _i++) {
-    slide = $slides[_i];
-    $(slide).css('width', latime);
-  }
-  return setInterval(function() {
-    return $slideContainer.velocity({
-      'margin-left': '-=' + latime
-    }, vitezaAnimatie, function() {
-      slideCurent++;
-      if (slideCurent === totalSlides) {
-        slideCurent = 1;
-        return $slideContainer.css('margin-left', 0);
-      }
-    });
-  }, pauza);
 });
