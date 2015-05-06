@@ -102,3 +102,12 @@ $(document).ready ->
 				insertData()
 				docCookies.removeItem('vertical-position')
 		.data('smoothState')
+
+	# jQuery image slider
+
+	# set interval
+		# animatie margin-left
+		# daca e ultimul slide din lista treci la urmatoarul producator
+		# adauga butoane de interactionare pt slide-ul anterior/urmator si producator
+
+

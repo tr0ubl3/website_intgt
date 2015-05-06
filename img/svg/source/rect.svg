@@ -1,0 +1,6 @@
+<svg width="500" height="200" viewBox="0 0 50 20" >
+
+    <rect x="20" y="10" width="10" height="5"
+          style="stroke: #000000; fill:none;"/>
+
+</svg>
