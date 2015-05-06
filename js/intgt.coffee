@@ -5,7 +5,10 @@ $(document).ready ->
 			colectie.forEach (element) ->
 				$(element[0]).on 'click', (e) ->
 					e.preventDefault()
-					$("html, body").animate({scrollTop:($(element[1]).offset().top)}, 1000, "swing")
+					$("html, body").velocity 'scroll', 
+						duration: 1000
+						offset: $(element[1]).offset().top
+						easing: 'swing'
 
 		# butoane pentru centrarea sectiunilor de ecran
 		elemente_de_centrat = [
@@ -104,8 +107,36 @@ $(document).ready ->
 		.data('smoothState')
 
 	# jQuery image slider
+	# configurare
+	vitezaAnimatie = 1000
+	pauza = 4000
+	slideCurent = 1
+
+	# DOM caching
+	$slider = $('#slider-frezare')
+	$slideContainer = $slider.find('.slides')
+	$slides = $slideContainer.find('.slide')
+
+	# gaseste si stocheaza latimea parintelui
+	latime = $slider.width()
+	# gaseste si stocheaza numarul de slide-uri
+	totalSlides = $slides.length
+
+	# setare css width ul
+	$slideContainer.css 'width', latime * totalSlides
+
+	#setare css width li
+	for slide in $slides
+		$(slide).css 'width', latime
 
 	# set interval
+	setInterval () ->
+		$slideContainer.velocity 'margin-left': '-=' + latime, vitezaAnimatie, () ->
+			slideCurent++
+			if slideCurent is totalSlides
+				slideCurent = 1
+				$slideContainer.css 'margin-left', 0
+	, pauza
 		# animatie margin-left
 		# daca e ultimul slide din lista treci la urmatoarul producator
 		# adauga butoane de interactionare pt slide-ul anterior/urmator si producator

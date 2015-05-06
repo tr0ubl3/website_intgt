@@ -1,14 +1,16 @@
 $(document).ready(function() {
-  var controlVideo, cookieMonster, implementareNavigatie, insertData;
+  var $slideContainer, $slider, $slides, controlVideo, cookieMonster, implementareNavigatie, insertData, latime, pauza, slide, slideCurent, totalSlides, vitezaAnimatie, _i, _len;
   (implementareNavigatie = function() {
     var buton, clickBinding, elemente_de_centrat, grup, imperechere, legatura, _i, _j, _len, _len1, _ref, _ref1, _results;
     clickBinding = function(colectie) {
       return colectie.forEach(function(element) {
         return $(element[0]).on('click', function(e) {
           e.preventDefault();
-          return $("html, body").animate({
-            scrollTop: ($(element[1]).offset().top)
-          }, 1000, "swing");
+          return $("html, body").velocity('scroll', {
+            duration: 1000,
+            offset: $(element[1]).offset().top,
+            easing: 'swing'
+          });
         });
       });
     };
@@ -84,7 +86,7 @@ $(document).ready(function() {
     slideSpeed: 200,
     directionThreshold: 20
   });
-  return (function($) {
+  (function($) {
     'use strict';
     var continut;
     return continut = $('body#main').smoothState({
@@ -106,4 +108,28 @@ $(document).ready(function() {
       }
     }).data('smoothState');
   })($);
+  vitezaAnimatie = 1000;
+  pauza = 4000;
+  slideCurent = 1;
+  $slider = $('#slider-frezare');
+  $slideContainer = $slider.find('.slides');
+  $slides = $slideContainer.find('.slide');
+  latime = $slider.width();
+  totalSlides = $slides.length;
+  $slideContainer.css('width', latime * totalSlides);
+  for (_i = 0, _len = $slides.length; _i < _len; _i++) {
+    slide = $slides[_i];
+    $(slide).css('width', latime);
+  }
+  return setInterval(function() {
+    return $slideContainer.velocity({
+      'margin-left': '-=' + latime
+    }, vitezaAnimatie, function() {
+      slideCurent++;
+      if (slideCurent === totalSlides) {
+        slideCurent = 1;
+        return $slideContainer.css('margin-left', 0);
+      }
+    });
+  }, pauza);
 });
